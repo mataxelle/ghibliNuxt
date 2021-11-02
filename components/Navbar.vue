@@ -14,8 +14,6 @@
       <v-spacer></v-spacer>
 
       <v-autocomplete
-            v-model="value"
-            :items="items"
             filled
             clearable
             prepend-icon="mdi-search"
