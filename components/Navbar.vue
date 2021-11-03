@@ -3,13 +3,17 @@
     <v-app-bar color="deep-purple accent-4" flat dark>
       <!--<v-app-bar-nav-icon></v-app-bar-nav-icon>-->
 
-      <v-toolbar-title>GhibliNuxt</v-toolbar-title>
+      <v-toolbar-title>
+        <nuxt-link to="/">GhibliNuxt</nuxt-link>
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-btn text>Films</v-btn>
+      <nuxt-link to="##">Films</nuxt-link>
+
+      <v-spacer></v-spacer>
       
-      <v-btn text>Contact</v-btn>
+      <nuxt-link to="/about">Contact</nuxt-link>
 
       <v-spacer></v-spacer>
 
@@ -29,3 +33,23 @@ export default {
     name: "Navbar"
 }
 </script>
+
+<style scoped>
+a, a.nuxt-link-active {
+  font-weight: bold;
+  color: aliceblue;
+}
+
+a.nuxt-link-exact-active {
+  color: #da73cc;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #da73cc;
+}
+</style>

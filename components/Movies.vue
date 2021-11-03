@@ -3,7 +3,7 @@
     <v-card v-for="movie in movies" :key="movie.id" :loading="loading" class="col mx-auto my-12" max-width="374">
 
       <v-img
-        height="250"
+        height="150"
         src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
       ></v-img>
 
@@ -22,9 +22,9 @@
       </v-card-text>
 
       <v-card-actions>
-        <v-btn color="deep-purple lighten-2" text @click="reserve">
+        <nuxt-link color="deep-purple lighten-2" text to="/movieCard">
           More
-        </v-btn>
+        </nuxt-link>
       </v-card-actions>
     </v-card>
   </div>
@@ -34,7 +34,7 @@
 import axios from 'axios'
 
 export default {
-  name: "Movie",
+  name: "Movies",
 
   data() {
       return {
@@ -49,6 +49,18 @@ export default {
         .catch(error => {
             console.log(error)
         })
-  }
+  },
+
+  /*methods: {
+    movieLink() {
+      axios
+    }
+  }*/
 };
 </script>
+
+<style scoped>
+a {
+  text-decoration: none;
+}
+</style>

@@ -2,16 +2,16 @@
     <div>
         <h1 class="text-center my-6">Tous les films</h1>
 
-        <Movie />
+        <Movies />
     </div>
 </template>
 
 <script>
-import Movie from '@/components/Movie.vue'
+import Movies from '@/components/Movies.vue'
 
 export default {
     components: {
-        Movie
+        Movies
     }
     
 }
