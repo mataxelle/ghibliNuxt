@@ -1,6 +1,7 @@
 <template>
   <div class="row">
-    <v-card v-for="movie in movies" :key="movie.id" :loading="loading" class="col mx-auto my-12" max-width="374">
+    <div class="col-md-4 col-sm" v-for="movie in movies" :key="movie.id">
+      <v-card :loading="loading" class="mx-auto my-12" max-width="374">
 
       <v-img
         height="150"
@@ -22,11 +23,13 @@
       </v-card-text>
 
       <v-card-actions>
-        <nuxt-link color="deep-purple lighten-2" text to="/movieCard">
+        <nuxt-link color="deep-purple lighten-2" text :to="{name: 'movieCard',
+                          params: { id: movie.id }}">
           More
         </nuxt-link>
       </v-card-actions>
     </v-card>
+    </div>
   </div>
 </template>
 

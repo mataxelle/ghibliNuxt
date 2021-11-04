@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar color="deep-purple accent-4" flat dark>
+    <v-app-bar color="cyan accent-4" flat dark>
       <!--<v-app-bar-nav-icon></v-app-bar-nav-icon>-->
 
       <v-toolbar-title>
@@ -41,7 +41,7 @@ a, a.nuxt-link-active {
 }
 
 a.nuxt-link-exact-active {
-  color: #da73cc;
+  color: #C51162;
 }
 
 a,
@@ -50,6 +50,6 @@ a:visited {
 }
 
 a:hover {
-  color: #da73cc;
+  color: #C51162;
 }
 </style>
