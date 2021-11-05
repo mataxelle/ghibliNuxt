@@ -13,7 +13,7 @@
 
       <v-spacer></v-spacer>
       
-      <nuxt-link to="/about">Contact</nuxt-link>
+      <nuxt-link to="/about">A propos</nuxt-link>
 
       <v-spacer></v-spacer>
 

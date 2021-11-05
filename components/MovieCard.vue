@@ -1,59 +1,59 @@
 <template>
   <div class="row">
     <div class="col">
-      <v-card :loading="loading" class="mx-auto my-12" max-width="374">
-
+      <v-card class="mx-auto my-12" max-width="374">
         <v-img
           height="250"
           src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
         ></v-img>
 
         <v-card-title>{{ movie.title }}</v-card-title>
+        <v-card-subtitle>
+          {{ movie.original_title }} -
+          {{ movie.original_title_romanised }}
+        </v-card-subtitle>
 
         <v-card-text>
-          <v-row align="center" class="mx-0">
-            <v-rating
-              :value="4.5"
-              color="amber"
-              dense
-              half-increments
-              readonly
-              size="14"
-            ></v-rating>
-
-            <div class="grey--text ms-4">4.5 (413)</div>
+          <v-row align="center" class="">
+            <v-col>
+              <v-rating
+                :value="movie.rt_score"
+                color="amber"
+                dense
+                half-increments
+                readonly
+                size="14"
+              ></v-rating>
+            </v-col>
+            <v-col>
+              <span class="gray--text ml-n7">
+                {{ movie.rt_score }}% | {{ movie.release_date }}
+              </span>
+            </v-col>
           </v-row>
 
-          <div class="my-4 text-subtitle-1">$ • Italian, Cafe</div>
-
-          <div>
-            Small plates, salads & sandwiches - an intimate setting with 12
-            indoor seats plus patio seating.
-          </div>
+          <v-row>
+            <v-col>
+              {{ movie.description }}
+            </v-col>
+          </v-row>
         </v-card-text>
 
         <v-divider class="mx-4"></v-divider>
 
-        <v-card-title>Tonight's availability</v-card-title>
+        <v-card-title>Production</v-card-title>
 
         <v-card-text>
-          <v-chip-group
-            v-model="selection"
-            active-class="deep-purple accent-4 white--text"
-            column
-          >
-            <v-chip>5:30PM</v-chip>
-
-            <v-chip>7:30PM</v-chip>
-
-            <v-chip>8:00PM</v-chip>
-
-            <v-chip>9:00PM</v-chip>
-          </v-chip-group>
+          <div class="my-4 text-subtitle-1">
+            Director : {{ movie.director }}
+          </div>
+          <div class="my-4 text-subtitle-1">
+            Productor : {{ movie.producer }}
+          </div>
         </v-card-text>
 
         <v-card-actions>
-          <v-btn color="deep-purple lighten-2" text @click="reserve">
+          <v-btn color="deep-purple lighten-2">
             Reserve
           </v-btn>
         </v-card-actions>
@@ -63,23 +63,25 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   name: "MovieCard",
 
   data() {
     return {
-      movie: {}
-    }
+      movie: {},
+    };
   },
 
   mounted() {
-    axios.get("https://ghibliapi.herokuapp.com/films/" + this.$route.params.id)
-    .then(response => (this.movie = response.data))
-    .catch(error => {
-      console.log(error)
-    })
-  }
-}
+    axios
+      .get("https://ghibliapi.herokuapp.com/films/" + this.$route.params.id)
+      //.get("https://ghibliapi.herokuapp.com/films/" + id)
+      .then((response) => (this.movie = response.data))
+      .catch((error) => {
+        console.log(error);
+      });
+  },
+};
 </script>
