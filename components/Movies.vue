@@ -27,16 +27,15 @@
     <v-divider class="mx-4"></v-divider>
 
     <v-card-text>
-      <p>Date de sortie : {{ movie.release_date }}</p>
+      <p>Release date : {{ movie.release_date }}</p>
     </v-card-text>
 
     <v-card-actions>
       <nuxt-link
         color="deep-purple lighten-2"
         text
-        :to="{ name: 'movieCard', params: { id: movie.id } }"
+        :to="`/movieCard/${movie.id}`"
       >
-        <!--:to="{ name: 'movieCard', params: { id: movie.id } }"-->
         More
       </nuxt-link>
     </v-card-actions>
@@ -51,7 +50,7 @@ export default {
     movie: {
       required: true,
     }
-  }  
+  },
 };
 </script>
 

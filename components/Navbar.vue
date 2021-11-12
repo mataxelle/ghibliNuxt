@@ -9,20 +9,29 @@
 
       <v-spacer></v-spacer>
 
-      <nuxt-link to="##">Films</nuxt-link>
+      <nuxt-link to="##">Movies</nuxt-link>
 
       <v-spacer></v-spacer>
       
-      <nuxt-link to="/about">A propos</nuxt-link>
+      <nuxt-link to="/about">About us</nuxt-link>
 
       <v-spacer></v-spacer>
 
       <v-autocomplete
+            hide-no-data
+            hide-selected
             filled
             clearable
             prepend-icon="mdi-search"
-            label="Recherche"
+            label="Search"
+            :items="movies"
+            item-text="title"
+            item-value="id"
+            id="search"
         >
+        <template v-slot:item="{item}">
+                <v-btn text :to="`/movieCard/${item.id}`">{{item.title}}</v-btn>
+            </template>
       </v-autocomplete>
     </v-app-bar>
   </div>
@@ -30,7 +39,19 @@
 
 <script>
 export default {
-    name: "Navbar"
+    name: "Navbar",
+
+    data() {
+      return {
+        movies: [],
+        search: null,
+      }
+    },
+
+    async fetch() {
+    const api = "https://ghibliapi.herokuapp.com/films";
+    this.movies = await this.$axios.$get(api);
+  }
 }
 </script>
 

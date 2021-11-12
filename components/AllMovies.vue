@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="text-center my-6">Tous les films</h1>
+        <h1 class="text-center my-6">All movies</h1>
 
         <div class="row">
             <div v-if="$fetchState.error" class="col text-center">

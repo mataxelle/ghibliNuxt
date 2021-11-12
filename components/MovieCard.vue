@@ -17,7 +17,6 @@
           <v-row align="center" class="">
             <v-col>
               <v-rating
-                :value="movie.rt_score"
                 color="amber"
                 dense
                 half-increments
@@ -74,14 +73,9 @@ export default {
     };
   },
 
-  mounted() {
-    axios
-      .get("https://ghibliapi.herokuapp.com/films/" + this.$route.params.id)
-      //.get("https://ghibliapi.herokuapp.com/films/" + id)
-      .then((response) => (this.movie = response.data))
-      .catch((error) => {
-        console.log(error);
-      });
+  async fetch() {
+    const oneMovie = `https://ghibliapi.herokuapp.com/films/` + this.$route.params.id;
+    this.movie = await this.$axios.$get(oneMovie);
   },
 };
 </script>
