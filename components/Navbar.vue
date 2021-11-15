@@ -9,7 +9,11 @@
 
       <v-spacer></v-spacer>
 
-      <nuxt-link to="##">Movies</nuxt-link>
+      <nuxt-link to="/">Movies</nuxt-link>
+
+      <v-spacer></v-spacer>
+
+      <nuxt-link to="/peoples">Peoples</nuxt-link>
 
       <v-spacer></v-spacer>
       

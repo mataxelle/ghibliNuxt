@@ -2,11 +2,6 @@
   <div class="row">
     <div class="col">
       <v-card class="mx-auto my-12" max-width="374">
-        <v-img
-          height="250"
-          src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-        ></v-img>
-
         <v-card-title>{{ movie.title }}</v-card-title>
         <v-card-subtitle>
           {{ movie.original_title }} -
@@ -26,8 +21,15 @@
             </v-col>
             <v-col>
               <span class="gray--text ml-n7">
-                {{ movie.rt_score }}% | {{ movie.release_date }}
+                {{ movie.rt_score }}%
               </span>
+            </v-col>
+          </v-row>
+
+          <v-row>
+            <v-col>
+              <p>Release date : {{ movie.release_date }}</p>
+              <p>Running time : {{ movie.running_time }}mn</p>
             </v-col>
           </v-row>
 
@@ -50,11 +52,11 @@
             Productor : {{ movie.producer }}
           </div>
         </v-card-text>
-
+        
         <v-card-actions>
-          <v-btn color="deep-purple lighten-2">
-            Reserve
-          </v-btn>
+          <nuxt-link to="/" color="deep-purple lighten-2">
+            Home
+          </nuxt-link>
         </v-card-actions>
       </v-card>
     </div>
@@ -62,8 +64,6 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   name: "MovieCard",
 
