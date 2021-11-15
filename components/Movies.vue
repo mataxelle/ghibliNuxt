@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto my-12" max-width="374">
+  <v-card class="mx-auto" max-width="374">
     <v-img
       height="150"
       src="https://cdn.vuetifyjs.com/images/cards/cooking.png"

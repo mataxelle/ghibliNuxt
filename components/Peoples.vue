@@ -5,10 +5,10 @@
       height="200px"
       src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
     >
-      <v-card-title>{{ people.name }}</v-card-title>
+      <v-card-title>
+          <nuxt-link :to="`/peopleCard/${people.id}`">{{ people.name }}</nuxt-link>
+      </v-card-title>
     </v-img>
-
-    <v-card-subtitle class="pb-0">ici : {{ people.films }}</v-card-subtitle>
 
     <v-card-text class="text--primary">
       <p>{{ people.gender }}</p>
@@ -32,7 +32,7 @@ export default {
     props: {
         people: {
             required: true,
-            films: ''
+            films: {}
         }
     },
 
@@ -40,12 +40,16 @@ export default {
         filmDirection() {
             
             const url = this.people.films;
-            console.log(url);
-            //const url = "https://ghibliapi.herokuapp.com/films/dc2e6bd1-8156-4886-adff-b39e6043af0c";
-            const id = url.substring(url.lastIndexOf('/') + 1);
-            console.log(id);
-            //const result = filmId.searchParams.get()
-            //console.log(result);
+
+            for (let i = 0; i < url.length; i++) {
+                const element = url[i];
+                const id = element.substring(element.lastIndexOf('/') + 1);
+                this.film = id;
+
+                this.$router.replace({
+                path: "/movieCard/" + `${this.film}`
+                });
+            }
         }
     }
 }

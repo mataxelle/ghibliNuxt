@@ -2,7 +2,7 @@
     <div>
         <h1 class="text-center my-6">All movies</h1>
 
-        <div class="row">
+        <div class="row my-6">
             <div v-if="$fetchState.error" class="col text-center">
                 <p>Error while fetching mountains</p>
             </div>

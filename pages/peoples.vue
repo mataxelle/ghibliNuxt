@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1 class="text-center my-6">All Peoples</h1>
-        <v-row>
+        <v-row class="my-6">
             <v-col v-for="people in peoples" :key="people.id">
                 <Peoples :people="people" />
             </v-col>
