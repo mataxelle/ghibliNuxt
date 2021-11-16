@@ -1,7 +1,7 @@
 <template>
-  <v-card class="mx-auto" max-width="374">
+  <v-card class="mx-auto" max-width="400">
     <v-img
-      height="150"
+      height="200"
       src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
     ></v-img>
 

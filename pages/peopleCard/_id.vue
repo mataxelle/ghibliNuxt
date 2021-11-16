@@ -1,6 +1,8 @@
 <template>
-    <div>
-        <PeopleCard />
+    <div class="row">
+        <div class="col">
+            <PeopleCard />
+        </div>
     </div>
 </template>
 

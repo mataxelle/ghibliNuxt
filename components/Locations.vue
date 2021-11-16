@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="374">
+  <v-card class="mx-auto" max-width="400">
     <v-img
       height="150"
       src="https://picsum.photos/id/11/500/300"

@@ -5,17 +5,11 @@
       height="200px"
       src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
     >
-      <v-card-title>
-          <nuxt-link :to="`/peopleCard/${people.id}`">{{ people.name }}</nuxt-link>
-      </v-card-title>
     </v-img>
 
-    <v-card-text class="text--primary">
-      <p>{{ people.gender }}</p>
-      <p>{{ people.age }}</p>
-      <p>{{ people.eye_color }}</p>
-      <p>{{ people.hair_color }}</p>
-    </v-card-text>
+    <v-card-title>
+      <nuxt-link :to="`/peopleCard/${people.id}`">{{ people.name }}</nuxt-link>
+    </v-card-title>
 
     <v-card-actions>
       <v-btn @click="filmDirection" color="orange" text>Film</v-btn>
@@ -27,30 +21,29 @@
 
 <script>
 export default {
-    name: "People",
+  name: "People",
 
-    props: {
-        people: {
-            required: true,
-            films: {}
-        }
+  props: {
+    people: {
+      required: true,
+      films: {},
     },
+  },
 
-    methods: {
-        filmDirection() {
-            
-            const url = this.people.films;
+  methods: {
+    filmDirection() {
+      const url = this.people.films;
 
-            for (let i = 0; i < url.length; i++) {
-                const element = url[i];
-                const id = element.substring(element.lastIndexOf('/') + 1);
-                this.film = id;
+      for (let i = 0; i < url.length; i++) {
+        const element = url[i];
+        const id = element.substring(element.lastIndexOf("/") + 1);
+        this.film = id;
 
-                this.$router.replace({
-                path: "/movieCard/" + `${this.film}`
-                });
-            }
-        }
-    }
-}
+        this.$router.replace({
+          path: "/movieCard/" + `${this.film}`,
+        });
+      }
+    },
+  },
+};
 </script>
