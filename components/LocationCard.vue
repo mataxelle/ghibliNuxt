@@ -11,37 +11,46 @@
             <p>Climate : {{ location.climate }}</p>
             <p>Terrain : {{ location.terrain }}</p>
             <p>Surface water : {{ location.surface_water }}</p>
-            <p>residents : {{ location.residents }}</p>
           </v-card-text>
-
-          <v-card-actions>
-            <v-btn color="orange" text>Film</v-btn>
-          </v-card-actions>
         </v-card>
       </div>
     </div>
 
     <div class="row">
-      <div
-        class="col"
-        v-for="resident in location.residents"
-        :key="resident.id"
-      >
-        <Residents :resident="resident" />
+      <div class="col">
+        <h3 class="mb-6">Related characters</h3>
+        <div class="row">
+          <div
+            class="col-md-4 col-sm-6"
+            v-for="resident in location.residents"
+            :key="resident"
+          >
+            <div class="pa-7 red darken-2 rounded-circle d-inline-block"></div>
+              <v-btn @click="peopleDirection">hello</v-btn>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h3 class="mb-6">Related film</h3>
+        <div class="row">
+          <div
+            class="col-md-4 col-sm-6"
+            v-for="film in location.films"
+            :key="film.id"
+          >
+            <div class="pa-7 cyan darken-3 rounded-circle d-inline-block"></div>
+            <v-btn class="btn" @click="filmDirection">Film</v-btn>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Residents from "@/components/Residents.vue";
-
 export default {
   name: "LocationCard",
-
-  components: {
-    Residents,
-  },
 
   data() {
     return {
@@ -55,9 +64,35 @@ export default {
     this.location = await this.$axios.$get(oneLocation);
   },
 
-  /*async fetch() {
-    const locatonResident = this.location.residents;
-    this.residents = await this.$axios.$get(locatonResident);
-  }*/
+  methods: {
+    filmDirection() {
+      const url = this.location.films;
+
+      for (let i = 0; i < url.length; i++) {
+        const element = url[i];
+        const id = element.substring(element.lastIndexOf("/") + 1);
+        this.film = id;
+
+        this.$router.replace({
+          path: "/movieCard/" + `${this.film}`,
+        });
+      }
+    },
+
+    peopleDirection() {
+      const url = this.location.residents;
+
+      for (let i = 0; i < url.length; i++) {
+        const element = url[i];
+        const id = element.substring(element.lastIndexOf("/") + 1);
+        //this.resident = id;
+        console.log(id);
+        
+        /*this.$router.replace({
+          path: "/peopleCard/" + `${this.resident}`,
+        });*/
+      }
+    },
+  },
 };
 </script>
