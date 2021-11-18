@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col">
-      <v-card class="mx-auto my-12" max-width="400">
+      <v-card class="mx-auto my-12" max-width="600">
         <v-card-title>{{ movie.title }}</v-card-title>
         <v-card-subtitle>
           {{ movie.original_title }} -
@@ -11,16 +11,7 @@
         <v-card-text>
           <v-row align="center" class="">
             <v-col>
-              <v-rating
-                color="amber"
-                dense
-                half-increments
-                readonly
-                size="14"
-              ></v-rating>
-            </v-col>
-            <v-col>
-              <span class="gray--text ml-n7">
+              <span> Score : 
                 {{ movie.rt_score }}%
               </span>
             </v-col>
@@ -54,9 +45,15 @@
         </v-card-text>
         
         <v-card-actions>
-          <nuxt-link to="/" color="deep-purple lighten-2">
-            Home
-          </nuxt-link>
+          <v-btn @click="characters" color="deep-purple lighten-2" text>
+            CHARACTERS
+          </v-btn>
+          <v-btn @click="locations" color="deep-purple lighten-2" text>
+            LOCATION
+          </v-btn>
+          <v-btn @click="home" color="deep-purple lighten-2" text>
+            HOME
+          </v-btn>
         </v-card-actions>
       </v-card>
     </div>
@@ -77,5 +74,19 @@ export default {
     const oneMovie = `https://ghibliapi.herokuapp.com/films/` + this.$route.params.id;
     this.movie = await this.$axios.$get(oneMovie);
   },
+
+  methods: {
+    home() {
+      this.$router.push("/")
+    },
+
+    characters() {
+      this.$router.push("/peoples")
+    },
+
+    locations() {
+      this.$router.push("/locations")
+    }
+  }
 };
 </script>

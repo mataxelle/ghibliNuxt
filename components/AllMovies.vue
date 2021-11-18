@@ -6,7 +6,7 @@
             <div v-if="$fetchState.error" class="col text-center">
                 <p>Error while fetching mountains</p>
             </div>
-            <div v-else class="col-md-4 col-sm" v-for="movie in movies" :key="movie.id">
+            <div v-else class="col-lg-4 col-sm mx-auto" v-for="movie in movies" :key="movie.id">
                 <Movies :movie="movie" />
             </div>
         </div>

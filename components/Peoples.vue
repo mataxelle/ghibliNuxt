@@ -13,8 +13,7 @@
 
     <v-card-actions>
       <v-btn @click="filmDirection" color="orange" text>Film</v-btn>
-
-      <v-btn color="orange" text> Species </v-btn>
+      <v-btn @click="species" color="orange" text> Species </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -44,6 +43,10 @@ export default {
         });
       }
     },
+
+    species() {
+      this.$router.push('/species');
+    }
   },
 };
 </script>

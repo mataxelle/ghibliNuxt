@@ -1,27 +1,20 @@
 <template>
   <v-card class="mx-auto" max-width="400">
-    <v-img
+    <nuxt-link
+        color="deep-purple lighten-2"
+        text
+        :to="`/movieCard/${movie.id}`"
+    >
+      <v-img
       height="200"
       src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
     ></v-img>
+    </nuxt-link>
 
     <v-card-title>{{ movie.title }}</v-card-title>
 
     <v-card-text>
-      <v-row align="center" class="">
-        <v-col class="col-5">
-          <v-rating
-            color="amber"
-            dense
-            half-increments
-            readonly
-            size="14"
-          ></v-rating>
-        </v-col>
-        <v-col>
-          <div class="gray--text ml-n7">{{ movie.rt_score }}%</div>
-        </v-col>
-      </v-row>
+      <span>Score : {{ movie.rt_score }}%</span>
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
@@ -31,13 +24,7 @@
     </v-card-text>
 
     <v-card-actions>
-      <nuxt-link
-        color="deep-purple lighten-2"
-        text
-        :to="`/movieCard/${movie.id}`"
-      >
-        More
-      </nuxt-link>
+      <v-btn @click="filmDirection" text color="cyan darken-3">More</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -51,6 +38,12 @@ export default {
       required: true,
     }
   },
+
+  methods: {
+    filmDirection() {
+      this.$router.push('/movieCard/' + this.movie.id)
+    }
+  }
 };
 </script>
 
