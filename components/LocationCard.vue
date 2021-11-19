@@ -16,21 +16,7 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col">
-        <h3 class="mb-6">Related characters</h3>
-        <div class="row">
-          <div
-            class="col-md-4 col-sm-6"
-            v-for="resident in location.residents"
-            :key="resident"
-          >
-            <div class="pa-7 red darken-2 rounded-circle d-inline-block"></div>
-              <v-btn @click="peopleDirection">hello</v-btn>
-          </div>
-        </div>
-      </div>
-
+    <div class="row mb-6">
       <div class="col">
         <h3 class="mb-6">Related film</h3>
         <div class="row">
@@ -41,6 +27,19 @@
           >
             <div class="pa-7 cyan darken-3 rounded-circle d-inline-block"></div>
             <v-btn class="btn" @click="filmDirection">Film</v-btn>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-xs">
+        <h3 class="mb-6">Related characters</h3>
+        <div class="row">
+          <div
+            class="col-md-4 col-sm-6"
+            v-for="resident in location.residents"
+            :key="resident"
+          >
+            <div class="pa-7 red darken-2 rounded-circle d-inline-block"></div>
+              <v-btn @click="peopleDirection">hello</v-btn>
           </div>
         </div>
       </div>
