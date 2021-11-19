@@ -2,7 +2,7 @@
     <div>
         <h1 class="text-center my-6">All species</h1>
         <div class="row my-6">
-            <div class="col-lg-4 col-sm-5 mx-auto" v-for="specie in species" :key="specie.id">
+            <div class="col-lg-4 col-sm-5 mx-sm-auto" v-for="specie in species" :key="specie.id">
                 <Species :specie="specie" />
             </div>
         </div>

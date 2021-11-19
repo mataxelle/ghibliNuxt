@@ -2,18 +2,18 @@
     <div class="container">
     <div class="row">
       <div class="col-10 offset-1">
-        <PeopleCard />
+        <SpecieCard />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import PeopleCard from '@/components/PeopleCard.vue'
+import SpecieCard from '@/components/SpecieCard.vue'
 
 export default {
     components: {
-        PeopleCard
+        SpecieCard
     },
 }
 </script>

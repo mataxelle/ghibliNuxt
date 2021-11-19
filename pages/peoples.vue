@@ -1,11 +1,11 @@
 <template>
     <div>
         <h1 class="text-center my-6">All Peoples</h1>
-        <v-row class="my-6">
-            <v-col class="col-md-4 col-sm-5 mx-auto" v-for="people in peoples" :key="people.id">
+        <div class="row my-6">
+            <div class="col-lg-4 col-sm-5 mx-sm-auto" v-for="people in peoples" :key="people.id">
                 <Peoples :people="people" />
-            </v-col>
-        </v-row>
+            </div>
+        </div>
     </div>
 </template>
 

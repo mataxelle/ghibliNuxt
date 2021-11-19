@@ -1,9 +1,8 @@
 <template>
     <div>
         <h1 class="text-center my-6">All locations</h1>
-
         <div class="row my-6">
-            <div class="col-lg-4 col-md-5 col-sm-5 mx-auto" v-for="location in locations" :key="location.id">
+            <div class="col-lg-4 col-sm-5 mx-sm-auto" v-for="location in locations" :key="location.id">
                 <Locations :location="location" />
             </div>
         </div>
