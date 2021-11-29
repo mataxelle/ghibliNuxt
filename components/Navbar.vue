@@ -9,22 +9,6 @@
 
       <v-spacer></v-spacer>
 
-      <nuxt-link to="/">Movies</nuxt-link>
-
-      <v-spacer></v-spacer>
-
-      <nuxt-link to="/peoples">Peoples</nuxt-link>
-
-      <v-spacer></v-spacer>
-
-      <nuxt-link to="/locations">Locations</nuxt-link>
-
-      <v-spacer></v-spacer>
-      
-      <nuxt-link to="/about">About us</nuxt-link>
-
-      <v-spacer></v-spacer>
-
       <v-autocomplete
             hide-no-data
             hide-selected

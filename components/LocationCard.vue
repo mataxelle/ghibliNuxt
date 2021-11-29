@@ -18,7 +18,7 @@
 
     <div class="row mb-6">
       <div class="col">
-        <h3 class="mb-6">Related film</h3>
+        <h3 class="mb-6 text-center">Related film</h3>
         <div class="row">
           <div
             class="col-md-4 col-sm-6"
@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="col-md-6 col-xs">
-        <h3 class="mb-6">Related characters</h3>
+        <h3 class="mb-6 text-center">Related characters</h3>
         <div class="row">
           <div
             class="col-md-4 col-sm-6"

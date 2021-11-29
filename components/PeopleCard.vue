@@ -27,7 +27,7 @@
 
     <div class="row">
       <div class="col">
-        <h3 class="mb-6">Film</h3>
+        <h3 class="mb-6 text-center">Film</h3>
         <div class="row">
           <div
             class="col-md-4 col-sm-6"
@@ -35,12 +35,12 @@
             :key="film.id"
           >
             <div class="pa-7 cyan darken-3 rounded-circle d-inline-block"></div>
-            <v-btn text class="btn" @click="film">Film</v-btn>
+            <v-btn text class="btn" @click="filmDirection">Film</v-btn>
           </div>
         </div>
       </div>
       <div class="col">
-        <h3 class="mb-6">Specie</h3>
+        <h3 class="mb-6 text-center">Specie</h3>
         <div class="row">
           <div
             class="col-md-4 col-sm-6"
@@ -73,6 +73,10 @@ export default {
   },
 
   methods: {
+    home() {
+      this.$router.push("/");
+    },
+    
     filmDirection() {
       const url = this.people.films;
       console.log(url);
@@ -85,6 +89,23 @@ export default {
         this.$router.replace({
           path: "/movieCard/" + `${this.film}`,
         });
+      }
+    },
+
+    specieDirection() {
+      const url = this.people.species;
+      console.log(url);
+
+      for (let i = 0; i < url.length; i++) {
+        const element = url[i];
+        const id = element.substring(element.lastIndexOf("/") + 1);
+        this.specie = id;
+
+        if (!id) {
+          this.$router.push("/species");
+        } else {
+          this.$router.replace({ path: "/specieCard/" + `${this.specie}` });
+        }
       }
     },
   },

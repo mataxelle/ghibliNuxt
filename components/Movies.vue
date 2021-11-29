@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="400">
+  <v-card class="mx-auto" max-width="400" hover>
     <nuxt-link
         color="deep-purple lighten-2"
         text
@@ -50,5 +50,9 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
+}
+
+.v-card {
+  border-left: 5px solid #00838F;
 }
 </style>

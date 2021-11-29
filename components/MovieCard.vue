@@ -2,6 +2,7 @@
   <div>
     <div class="row">
       <div class="col">
+        <h1 class="text-center my-6">{{ movie.title }}</h1>
         <v-card class="mx-auto my-12">
           <v-img :src="movie.image"></v-img>
           <v-card-title>{{ movie.title }}</v-card-title>
@@ -55,7 +56,7 @@
 
     <div class="row mb-6">
       <div class="col-md-6 col-xs">
-        <h3 class="mb-6">Related characters</h3>
+        <h3 class="mb-6 text-center">Related characters</h3>
         <div class="row">
           <div
             class="col-sm-4 col"
@@ -69,7 +70,7 @@
       </div>
 
       <div class="col-md-6 col-xs">
-        <h3 class="mb-6">Related species</h3>
+        <h3 class="mb-6 text-center">Related species</h3>
         <div class="row">
           <div
             class="col-sm-4 col"
@@ -85,7 +86,7 @@
 
     <div class="row mb-6">
       <div class="col-md-6 col-xs">
-        <h3 class="mb-6">Related locations</h3>
+        <h3 class="mb-6 text-center">Related locations</h3>
         <div class="row">
           <div
             class="col-sm-4 col"
@@ -98,7 +99,7 @@
         </div>
       </div>
       <div class="col-md-6 col-xs">
-        <h3 class="mb-6">Related vehicles</h3>
+        <h3 class="mb-6 text-center">Related vehicles</h3>
         <div class="row">
           <div
             class="col-sm-4 col"

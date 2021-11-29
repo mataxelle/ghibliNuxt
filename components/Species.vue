@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="400">
+  <v-card class="mx-auto" max-width="400" hover>
     <v-sheet color="cyan darken-3">
       <v-btn text block @click="specieInformation" height="200">
         <v-card-title class="white--text text-h5">{{ specie.name }}</v-card-title>

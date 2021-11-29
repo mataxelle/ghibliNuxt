@@ -16,6 +16,10 @@
         sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
       </v-card-text>
 
+      <v-card-actions>
+        <nuxt-link to="/about">About us</nuxt-link>
+      </v-card-actions>
+
       <v-divider></v-divider>
 
       <v-card-text class="white--text">
@@ -49,7 +53,7 @@ a, a.nuxt-link-active {
 }
 
 a.nuxt-link-exact-active {
-  color: #da73cc;
+  color: #C51162;
 }
 
 a,
@@ -58,6 +62,6 @@ a:visited {
 }
 
 a:hover {
-  color: #da73cc;
+  color: #C51162;
 }
 </style>
